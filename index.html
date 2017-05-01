@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Spotify : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+      <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+
+      <title>Spotify</title>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/jquery.fullPage.min.js"></script>
+      <script src="javascripts/d3.js"></script>
+      <script src="javascripts/d3.min.js"></script>
+
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+            /*var divElement = document.getElementById('viz1481423599363');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '1004px';
+            vizElement.style.height = '669px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);*/
+
+            $('#fullpage').fullpage();
+            $.fn.fullpage.setAutoScrolling(false)
+
+        });
+
+
+    </script>
+
+  </head>
+
+  <body>
+
+
+
+    <div id="menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#datasets1">Data Exploration</a></li>
+        <li><a href="#popularity">Playlist Popularity</a></li>
+        <li><a href="#audio-analysis">Audio Analysis</a></li>
+          <li><a href="#playgen">Playlist Generation</a></li>
+          <li><a href="#conclusion">Conclusions</a></li>
+        <li><a id="forkme_banner" href="https://github.com/spotify-iacs/capstone">View on GitHub &nbsp &nbsp &nbsp &nbsp</a></li>
+      </ul>
+    </div>
+
+    <div class="spacer">
+        &nbsp;
+    </div>
+
+    <div id="fullpage">
+
+        <!-- HEADER -->
+
+        <div class="section" id="home">
+            <div style="width: 50%; margin-top: 80px; float: left" id="left">
+                <br>
+                <br>
+              <h1>Creating the <br> Perfect Playlist: </h1>
+                <h3 style="margin-bottom: 30px">Optimizing Playlist Selection & Sequencing on Spotify</h3>
+                <h4>Laura Ware, Sonu Mehta, Omar Abboud</h4>
+              <!--<img src="images/Amazon-yellow-arrow.png">-->
+                <br>
+                <br>
+                <a id = 'begin' href="#overview">BEGIN</a>
+
+            </div>
+            <div style="width: 50%; float: right; height: 649px" id="right"><div id="force" style="width: 100%; height: 100%"></div></div>
+
+
+        </div>
+        <div class="section" id="overview">
+          <h2 class="sectiontitle">Overview & Motivation</h2>
+
+            <div class="col-md-6 column">
+
+                <h3>Introduction</h3>
+                <p>Spotify-curated playlists are followed by millions of Spotify users. These playlists are created by
+                    a combination of algorithmic and human-driven processes. Spotify playlists are both personalized
+                    (e.g., Discover Weekly) as well as intended for general browsing based on genres, moods, or
+                    current events.
+                </p>
+
+                <p>
+                    This capstone project aims to answer the following question: to what extent can we predict the success
+                    of a Spotify-curated playlist, based only on the songs that comprise that playlist? Do the intrinsic
+                    features of a song, from it acoustic properties to its relative position within a playlist, contribute
+                    to how well users will respond to that overall playlist?<br>
+
+                </p>
+
+                <center><img src="images/Asset11.png" style="width: 75%"/></center>
+
+            </div>
+            <div class="col-md-6 column">
+
+                <h3>Data Source</h3>
+                <p> The primary source used for data in this project was the publicly available <strong>Spotify Api</strong>.
+                 From the API, we obtained valuable information about playlists, from their lengths and popularities to
+                their component songs and a list of Spotify-derived audio features for each track. For this project we
+                analyzed <strong>2,000 playlists</strong> that have been individually curated by Spotify, encompassing a universe of roughly
+                <strong>20,000 songs</strong>.</p>
+
+                <h3>Project Features</h3>
+                <p>
+                    Our project is divided into the following broad spheres of analysis:
+                </p>
+                <ul>
+                    <li>Deciding on a suitable metric for popularity</li>
+                    <li>Developing a per-song training set of features from the Spotify API to predict the popularity of
+                    any given playlist (or collection of tracks)</li>
+                    <li>Deriving our own audio features using sophisticated signal processing and feature extractinon techniques</li>
+                    <li>Using Spotify's and our own features to generate similarity metrics that can optimize the creation
+                    of a new, optimal playlist given an input song of interest</li>
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="section tableauarea" id="datasets1">
+            <h2 class="sectiontitle">Data Exploration and Visualization</h2>
+            <center><p class = 'carouselbox'>This carousel cycles through primary observations learned through the data exploration phase of the
+            project; namely, understanding the relationship between the mean popularity of a playlist's tracks and the overall popularity
+                of a playlist.</p></center>
+            <div class="slide" id="slide2">
+
+            </div>
+        </div>
+
+
+        <div class="section" id="popularity">
+          <h2 class="sectiontitle">Predicting Playlist Popularity</h2>
+            <center><p class='collabbox'>This section describes a series of models that predict the popularity of a playlist,
+            defined as the number of playlist followers binned into 5 popularity levels based on quantile. The
+                inputs to this model include various attributes relating to the playlist as well as its
+            component songs. As the number of songs per playlist varies, summary metrics were decided upon and tested
+            in order to generate a final array of playlist-level features that could be used for a suitable prediction.</p></center>
+            <!-- <div style="height: 600px"> -->
+            <div class='row'>
+              <div class="col-md-6 column">
+
+                  <h3>Subset 1: Song-Level Data</h3>
+                  <p>The Spotify API provides a number of important data points on the track level, namely the popularity of
+                  the track on an index basis from 1 to 100, as well as the number of markets the song is available in. The API
+                  also notably includes the following audio-based features per song: acousticness, danceability, duration,
+                  energy, instrumentalness, key, liveness, loudness, mode, tempo, valence, and time signature. One measure per
+                  audio feature is provided per song, and is intended to be interpreted as a relative "level" at which the feature
+                  gravitates throughout a given song.</p>
+
+                  <h3>Subset 2: Playlist-Level Data</h3>
+
+                  <p>Playlist-level data includes three primary metrics: the number of followers (in other words, the value
+                  we are trying to predict), the number of tracks that are in the playlist, and indicator of whether the
+                  playlist is featured or not.</p>
+
+                  <p>Various models were tested for this task, including logistic regression, support vector machines,
+                  and random forest classifiers. The best performing model was a random forest whose overall accuracy was
+                  78% on a training set.</p>
+
+
+              </div>
+              <div class="col-md-6 column">
+
+                  <h3>Generating a Training Set</h3>
+                  <p>
+                      One important observation that guided our modeling approach for playlist popularity prediction
+                      was the understanding that the mean popularity of a playlist's tracks were a rough proxy or
+                      independently strong predictor of popularity. In order to improve upon the predictive ability of an
+                      all-encompassing model, however, our goal was to determine whether the addition of acoustical
+                      features to a training set would improve the classification rate of a predictive model.<br>
+                  </p>
+                  <center><img style="width: 80%; display: block" src="images/sketch1.png"/></center>
+                  <p>
+                      <br>In order to generate a training set of playlist-level features, a careful consideration of track-level
+                      analysis had to be made in order to aggregate song data in a meaningful way. While simple averaging or
+                      addition could have been a simple solution, capturing the distribution of acoustic features more
+                      precisely hypothetically contains better predictive ability. As a result, our approach was to first
+                      approximate the distribution of acoustic features by representing each acoustic features in 5 different
+                      columns, each corresponding to the quantile of that feature's distribution across the playlist. The
+                      second, and chosen, approach was to instead reflect the distribution through sequencing, by providing
+                      the median value of that acoustic feature for songs that belong to a particular quartile of the
+                      playlist's progression.
+                  </p>
+
+              </div>
+            </div>
+
+        </div>
+
+
+        <div class="section" id="audio-analysis">
+            <h2 class="sectiontitle">Raw Audio Analysis</h2>
+            <div class="col-md-6 column">
+
+                <h3>Methodology</h3>
+                <p><strong>Explanation:</strong></p>
+                <p><strong>Explanation 2</strong></p>
+                <p><strong>Explanation 3</strong></p>
+                <p><strong>Explanation 4</strong></p>
+
+
+
+
+            </div>
+            <div class="col-md-6 column">
+
+            <h3>Implementation</h3>
+
+
+            </div>
+        </div>
+
+        <div class="section" id="playgen">
+          <h2 class="sectiontitle">Playlist Generation</h2>
+            <div class="col-md-6 column">
+
+                <h3>Algorithm Overview</h3>
+                <ul>
+                    <li><strong>Step 1: </strong></li>
+                    <li><strong>Step 2: </strong></li>
+                </ul>
+
+
+
+
+            </div>
+
+
+            <div class="col-md-6">
+            <h3>Results</h3>
+
+
+            </div>
+        </div>
+
+
+        <div class="section" id="conclusion">
+            <h2 class="sectiontitle">Conclusions & Future Work</h2>
+          <div class="col-md-6 column">
+              <h3>Conclusions</h3>
+
+          </div>
+            <div class="col-md-6 column">
+                <h3>Future Work</h3>
+
+            </div>
+        </div>
+
+        <div class="section" id="appendixSA">
+            <h2>Appendix A: Simulated Annealing</h2>
+            <div class="col-md-6 column">
+
+                <h3>Overview</h3>
+
+            </div>
+            <div class="col-md-6 column">
+
+                <h3>Implementation</h3>
+
+            </div>
+        </div>
+
+        <div class="section" id="appendixMF">
+            <h2>Appendix B: Earth Mover's Distance</h2>
+            <div class="col-md-6 column">
+
+                <h3>Overview</h3>
+
+            </div>
+
+
+            <div class="col-md-6 column">
+                <h3>Implementation</h3>
+
+            </div>
+
+
+        </div>
+
+        <div class="section" id="references">
+            <h2>References</h2>
+            <div class="col-md-12 column">
+
+
+            </div>
+
+        </div>
+        
+    </div>
+  </body>
+
+
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/main.js"></script>
+<script src="javascripts/jquery.fullPage.min.js"></script>
+
+
+
+</html>
