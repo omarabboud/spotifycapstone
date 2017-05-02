@@ -53,6 +53,7 @@
         <li><a href="#datasets1">Data Exploration</a></li>
         <li><a href="#popularity">Playlist Popularity</a></li>
         <li><a href="#audio-analysis">Audio Analysis</a></li>
+          <li><a href="#song-similarity">Song Similarity</a></li>
           <li><a href="#playgen">Playlist Generation</a></li>
           <li><a href="#conclusion">Conclusions</a></li>
         <li><a id="forkme_banner" href="https://github.com/spotify-iacs/capstone">View on GitHub &nbsp &nbsp &nbsp &nbsp</a></li>
@@ -236,11 +237,25 @@
         <div class="section" id="playgen">
           <h2 class="sectiontitle">Playlist Generation</h2>
             <div class="col-md-6 column">
-
                 <h3>Algorithm Overview</h3>
                 <ul>
-                    <li><strong>Step 1: </strong></li>
-                    <li><strong>Step 2: </strong></li>
+                    <li><strong>Step 1: </strong>
+                    From a seed track, find related tracks to be candidates for the final output playlist. These candidate tracks fall into three different categories of tracks:
+                        <ol>
+                            <li><strong>Top tracks from Spotify-defined related artists</strong></li>
+                            <li><strong>Tracks from related artists identified as acoustically similar</strong> to the seed song. Acoustic similarity is found using the manhattan distance and Spotify API features.</li>
+                            <li><strong>Tracks from a separate database of tracks identified as acoustically similar</strong> to the seed song. Acoustic similarity is found using vantage points and Earth mover's distance.</li>
+
+                        </ol>
+                    <li><strong>Step 2: </strong>
+                    Select candidate songs from one or more of the above categories. Categories can be weighted to include different proportions of songs from each category.
+                </li>
+                    <li><strong>Step 3: </strong>
+                    Randomly sample 30 tracks from the candidate tracks and optimize the number of playlist followers using our predictive model and simulated annealing. The loss function is defined as a weighted average between class 4 and 5 probabilities--i.e., the playlist has a high probability of falling into the top two quantiles for number of followers. Run four optimizations in parallel and select the best result.
+                    </li>
+                    <li><strong>Step 4: </strong>
+                    Output a final playlist that is predicted to be most successful.
+                    </li>
                 </ul>
 
 
@@ -251,8 +266,9 @@
 
             <div class="col-md-6">
             <h3>Results</h3>
-
-
+            <p><strong>Example seed song: Shape of You by Ed Sheeran</strong></p>
+                <p>Simulated annealing effectively lowers the energy, defined as weighted proability of being in the top two classes of number of playlist followers</p>
+                <p>Using top tracks gives the best results.</p>
             </div>
         </div>
 
@@ -279,6 +295,10 @@
             <div class="col-md-6 column">
 
                 <h3>Implementation</h3>
+                <p> <strong>Example of Energy over Time</strong></p>
+                <center><img src="images/sim_anneal_E.png" style="width: 75%"/></center>
+                <p><strong>Example of Temperature over Time</strong> </p>
+                <center><img src="images/sim_anneal_T.png" style="width: 75%"/></center>
 
             </div>
         </div>

@@ -138,6 +138,10 @@ h2 {
 
 }
 
+#playgen li {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 h3 {
   font-size: 21px;
 }
@@ -156,6 +160,8 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+  text-align: left;
+
 }
 
 footer p {
@@ -580,6 +586,8 @@ ol {
   padding-bottom:15px;
   padding-top:15px;:
 }
+
+
 .section {
   padding-left: 50px;
   padding-right:50px;
