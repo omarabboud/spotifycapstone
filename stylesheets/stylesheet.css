@@ -623,7 +623,11 @@ svg {
   width: 604px;
   height: 649px;
 }
-
+/*
+#playgen img {
+  float: left;
+}
+*/
 /*Everything relating to recommendations*/
 
 #genre-select {
