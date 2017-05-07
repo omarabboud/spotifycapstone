@@ -278,8 +278,9 @@ hr {
 }
 
 table {
-  border: 1px solid #373737;
+  /*border: 1px solid #373737;*/
   margin-bottom: 20px;
+  padding-bottom: 20px;
   text-align: left;
  }
 
@@ -300,6 +301,10 @@ form {
   padding: 20px;
 }
 
+
+#category-select {
+  margin-top: 40px;
+}
 /*******************************************************************************
 Full-Width Styles
 *******************************************************************************/

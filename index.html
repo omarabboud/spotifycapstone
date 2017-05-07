@@ -213,7 +213,7 @@
 
         <div class="section" id="audio-analysis">
             <h2 class="sectiontitle">Acoustic Similarty</h2>
-      
+
             <div class="slide" id="slide1">
                 <div class="col-md-6 column">
 
@@ -330,10 +330,10 @@
                 <div class="section" id="demo">
             <h2 class="sectiontitle">Interactive Playlist Demonstration</h2>
 
-            <center><p id='playbox' class='collabbox'>In this section, you can interact with the playlist generation model by selecting
+            <!--center><p id='playbox' class='collabbox'>In this section, you can interact with the playlist generation model by selecting
             an input song from the options on the left and the type of method utilized to optimize for playlist popularity.
             After selecting these parameters, an output playlist will be displayed with the corresponding class probabilities
-            predicted by the model for popularity levels 1 through 5.</p></center>
+            predicted by the model for popularity levels 1 through 5.</p></center>-->
 
             <div class="col-md-6 column" style="height:600px">
 
@@ -341,32 +341,42 @@
 
                 <div class="select-song" style="height:40%;">
 
+                   <!-- <iframe src=\"https://open.spotify.com/embed?uri=spotify:track:7qiZfU4dY1lWllzX7mPBI3\"frameborder=\"0\" allowtransparency=\"true\"></iframe>
+-->
                     <table id="songselect">
-                        <tr>
+                        <!--<tr>
                             <th>Song Name</th>
                             <th>Artist</th>
-                            <th>Song ID</th>
+                        </tr>
+                        -->
+                        <tr>
+                            <iframe src="https://open.spotify.com/embed?uri=spotify:track:7qiZfU4dY1lWllzX7mPBI3&theme=white&view=coverart"
+                                    width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+                            <!--<td class="nr"></td>-->
+                            <!--<td>Ed Sheeran</td>-->
+                            <!--<td>7qiZfU4dY1lWllzX7mPBI3</td>-->
                         </tr>
                         <tr>
-                            <td class="nr">Shape of You</td>
-                            <td>Ed Sheeran</td>
-                            <td>7qiZfU4dY1lWllzX7mPBI3</td>
-                        </tr>
-                        <tr>
+                            <iframe src="https://open.spotify.com/embed?uri=spotify:track:6txo4X8yd8FekwFFtI82Ea&theme=white&view=coverart"
+                                    width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+                            <!--
                             <td>Piano Sonata No. 14 in C Minor K457: I Molto Allegro</td>
                             <td>Wolfgang Amadeus Mozart</td>
-                            <td>6txo4X8yd8FekwFFtI82Ea</td>
+                            <td>6txo4X8yd8FekwFFtI82Ea</td>-->
                         </tr>
                         <tr>
+                            <iframe src="https://open.spotify.com/embed?uri=spotify:track:7k2lqQ4Vt9435X24qUISki&theme=white&view=coverart"
+                                    width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+                            <!--
                             <td>Daydream</td>
                             <td>Ciele (ft. Chris Ho)</td>
-                            <td>7k2lqQ4Vt9435X24qUISki</td>
+                            <td>7k2lqQ4Vt9435X24qUISki</td>-->
                         </tr>
                     </table>
 
                 </div>
 
-                <h3>2. Select Optimization Method</h3>
+                <h3 id="category-select">2. Select Category of Candidate Songs</h3>
 
                 <div class="select-type" style="height:50%;">
 
