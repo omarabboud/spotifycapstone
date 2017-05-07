@@ -300,7 +300,301 @@
 
             </div>
         </div>
+                <div class="section" id="demo">
+            <h2 class="sectiontitle">Interactive Playlist Demonstration</h2>
 
+            <center><p id='playbox' class='collabbox'>In this section, you can interact with the playlist generation model by selecting
+            an input song from the options on the left and the type of method utilized to optimize for playlist popularity.
+            After selecting these parameters, an output playlist will be displayed with the corresponding class probabilities
+            predicted by the model for popularity levels 1 through 5.</p></center>
+
+            <div class="col-md-6 column" style="height:600px">
+
+                <h3>1. Select Seed Song</h3>
+
+                <div class="select-song" style="height:40%;">
+
+                    <table id="songselect">
+                        <tr>
+                            <th>Song Name</th>
+                            <th>Artist</th>
+                            <th>Song ID</th>
+                        </tr>
+                        <tr>
+                            <td class="nr">Shape of You</td>
+                            <td>Ed Sheeran</td>
+                            <td>7qiZfU4dY1lWllzX7mPBI3</td>
+                        </tr>
+                        <tr>
+                            <td>Piano Sonata No. 14 in C Minor K457: I Molto Allegro</td>
+                            <td>Wolfgang Amadeus Mozart</td>
+                            <td>6txo4X8yd8FekwFFtI82Ea</td>
+                        </tr>
+                        <tr>
+                            <td>Daydream</td>
+                            <td>Ciele (ft. Chris Ho)</td>
+                            <td>7k2lqQ4Vt9435X24qUISki</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <h3>2. Select Optimization Method</h3>
+
+                <div class="select-type" style="height:50%;">
+
+                    <table id="methodselect">
+                        <tr>
+                            <th>Method</th>
+                        </tr>
+                        <tr>
+                            <td>Top Tracks From Related Artists</td>
+                        </tr>
+                        <tr>
+                            <td>Similar Tracks From Related Artists</td>
+                        </tr>
+                        <tr>
+                            <td>Similar Tracks From Vantage Points Database</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6" style="height: 600px">
+
+                <h3>3. View Playlist & Class Probabilities</h3>
+
+                <div class="playlist-gen" style="height:50%;">
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Track #</th>
+                            <th>Song Name</th>
+                            <th>Artist</th>
+                            <th>Song ID</th>
+                        </tr>
+                        </thead>
+                        <tbody class="play">
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="chart-area"></div>
+            </div>
+        </div>
+
+        <div class="section" id="conclusion">
+            <h2 class="sectiontitle">Conclusions & Future Work</h2>
+          <div class="col-md-6 column">
+              <h3>Conclusions</h3>
+
+              <p>What this Capstone has concluded is that combinations of songs can be optimized for popularity using
+                  a simulated annealing method supported by raw audio-based similarity metrics and a Random Forest
+                  predictive model of popularity. Analyzing the intrinsic data of a song — especially its acoustical
+                  features — as well as its placement alongside other songs, can result in a reliable prediction of
+                  popularity on a scale of 1 to 5. This is a particularly important technical and strategic finding
+                  for Spotify; as the company grows, modelling techniques such as these have the potential to make
+                  their playlists and other product offerings more data-driven, rigorous, and scaleable.
+
+              </p>
+
+          </div>
+            <div class="col-md-6 column">
+                <h3>Future Work</h3>
+                <p>
+                    We recommend two areas of future research: first, steps must be taken to mitigate the rare case
+                    of overfitting that affected our random forest classifier, which over-predicted unpopular playlists
+                    in the testing set. Second, more metadata must be collected and then incorporated as predictors of
+                    popularity to ensure that acoustical features are not capturing information such as release date or
+                    other non-intrinsic characteristics.
+                </p>
+
+            </div>
+        </div>
 
         <div class="section" id="conclusion">
             <h2 class="sectiontitle">Conclusions & Future Work</h2>
