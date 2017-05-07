@@ -711,3 +711,33 @@ svg {
   width:100%;
   margin: auto;
 }
+
+#playbox{
+    margin: 0 0 20px 0;
+}
+
+.play {
+    display:block;
+    height:210px;
+    overflow:auto;
+}
+
+tr {
+    padding: 5px 5px 5px 5px;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+
+.probsvg {
+    width: 400px;
+    height: 300px;
+}
+
+.highlight {
+    background-color: #5A955A;
+    color: #fff;
+}
