@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.fullPage.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+          <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jqmath-0.4.3.css">
       <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
 
 
@@ -16,6 +17,11 @@
     <script src="javascripts/jquery.fullPage.min.js"></script>
       <script src="javascripts/d3.js"></script>
       <script src="javascripts/d3.min.js"></script>
+    
+          <script src="javascripts/jqmath-0.4.6.js"></script>
+      <script src="javascripts/jqmath-etc-0.4.6.min.js"></script>
+      <script src="javascripts/jscurry-0.4.5.js"></script>
+      <script src="javascripts/jscurry-0.4.5.min.js"></script>
 
 
       <script type="text/javascript">
@@ -687,11 +693,55 @@
 
                 <h3>Overview</h3>
 
+                <p>
+                    Simulated Annealing is one of the most popular techniques for global optimization.
+                    In physical annealing, a system is first heated to a melting state and then cooled down slowly.
+                    When the solid is heated, its molecules start moving randomly, and its energy increases.
+                    If the subsequent process of cooling is slow, the energy of the solid decreases slowly,
+                    but there are also random increases in the energy governed by the Boltzmann distribution.
+                    If the cooling is slow enough, and deep enough to unstress the solid, the system will
+                    eventually settle down to the lowest energy state where all the molecules are arranged
+                    to have minimal potential energy.
+                </p>
+
+                <p>
+                    Suppose the system is in a state with energy $E_i$ (function at current $x_i$ has value $E_i$)
+                    and subsequent to the random fluctuation to position xjxj, now has energy state $E_j$.
+                    We denote the change in the energy due to the state change as $ΔE=E_j−E_i$.
+                    The move to the new position $x_j$ is done via a proposal. If the new state has lower
+                    energy than the current state, we go into this new state. This stochastic acceptance
+                    of higher energy states, allows our process to escape local minima.
+
+                </p>
+
+                <p>
+                    As the temperature is lowered, there will be more concentrated search effort near
+                    the current local minimum, since only few uphill moves will be allowed. Thus,
+                    if we get our temperature decrease schedule right, we can hope that we will converge to a
+                    global minimum. If the lowering of the temperature is sufficiently slow,
+                    the system reaches “thermal equilibrium” at each temperature.
+                </p>
+
+
             </div>
             <div class="col-md-6 column">
 
                 <h3>Implementation</h3>
-                <p> <strong>Example of Energy and Temperature over Time</strong></p>
+
+                <ol>
+                <li>Initialize $xi$, $T$, $L(T)$ where $L$ is the number of iterations at a particular temperature.</li>
+                <li>Perform L transitions thus (we will call this an epoch):
+                <ol>
+                <li>Generate a new proposed position x</li>
+                <li>If $x$ is accepted (according to probability $P=e^{{ΔE}d{T}}$), set $x_{i+1}=x_j$, else set $x_{i+1}=x_i$.</li>
+                </ol>
+                </li>
+                <li>Update $T$ and $L$</li>
+                <li>Until some fixed number of epochs, or until some stop criterion is fulfilled, go to 2.</li>
+                </ol>
+
+
+                <p> <strong>Temperature & Energy of Playlist Annealing</strong></p>
                 <center><img src="images/Asset%208@3x.png" style="width: 100%"/></center>
 
             </div>
