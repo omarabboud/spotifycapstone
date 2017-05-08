@@ -212,12 +212,17 @@
 
         </div>
 
-        <div class="section" id="audio-analysis">
-            <h2 class="sectiontitle">Acoustic Similarty</h2>
-
+        <div class="section" id="song-similarity">
+            <h2 class="sectiontitle">Acoustic Similarity</h2>
+            The traditional approach technique of determining acoustic similarity is by hand. But this is infeasible for
+            large quantities of music. Some researchers have tried to analyize MIDI music data to find melody contour for each
+            part of music. But the type of music similarity required for playlist construction is based on the overall sound of 
+            music rather than just the melody. One of such approaches is to use the indexing based on matching features such as
+            Mel-frequency cepstral coefficients(MFCCs), Chroma coefficients and energy etc. For this project, we try two different
+            approaches to get acoustically similar songs.
             <div class="slide" id="slide1">
                 <div class="col-md-6 column">
-
+                    
                     <h3>Methodology</h3>
                     <p><strong>Explanation:</strong></p>
                     <p><strong>Explanation 2</strong></p>
@@ -252,14 +257,11 @@
                     These features are a characteristic of the frequency and pitch of the songs. Combining all the 34 features taken at 30 timestamps of a song make 1020
                     dimensional predictor for a song.
 
-
+                <img src="images/Energy_extraction.png" style="width: 65%"/>
+                
 
                 </p>
 
-                <p><strong>Explanation:</strong></p>
-                <p><strong>Explanation 2</strong></p>
-                <p><strong>Explanation 3</strong></p>
-                <p><strong>Explanation 4</strong></p>
 
 
 
