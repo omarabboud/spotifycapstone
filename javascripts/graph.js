@@ -7,8 +7,8 @@
 
 var margin_g = {top: 30, right: 30, bottom: 40, left: 48};
 
-var width_g = 600 - margin_g.left - margin_g.right,
-    height_g = 200 - margin_g.top - margin_g.bottom;
+var width_g = 560 - margin_g.left - margin_g.right,
+    height_g = 250 - margin_g.top - margin_g.bottom;
 
 var svg2 = d3.select("#chart-area").append("svg")
     .attr("width", width_g + margin_g.left + margin_g.right)
@@ -21,7 +21,7 @@ var x = d3.scaleBand().rangeRound([0, width_g]).padding(0.1);
 var y = d3.scaleLinear().range([height_g,0]);
 
 x.domain([1,2,3,4,5]);
-y.domain([0,1]);
+y.domain([0,0.75]);
 
 svg2.append("g")
     .attr("transform","translate(0,0)")
@@ -34,7 +34,7 @@ svg2.append("g")
     .call(d3.axisBottom(x));
 
 svg2.append("text")
-    .attr("transform", "translate(200,160)")
+    .attr("transform", "translate(200,210)")
     .text("Popularity Class");
 
 svg2.append("text")
@@ -60,10 +60,6 @@ svg2.select(".y-axis")
 svg2.select(".x-axis")
     .transition().duration(800)
     .call(xAxis);*/
-
-
-
-var xlabel = svg2.append("text");
 
 Graph = function(_data){
 
@@ -120,8 +116,26 @@ Graph.prototype.wrangleData = function(selectSong, selectBucket){
         .attr("y", function(d){return y(+d.probabilities);})
         .attr("width", 10)
         .attr("height", function(d){ return height_g - y(d.probabilities);});*/
+    
+    var text = svg2.selectAll(".text")
+        .remove()
+        .exit()
+        .data(filteredData);
 
+    text
+        .enter().append("text")
+        .attr("class","text")
+        .attr("text-anchor", "right")
+        .attr("x", function(d) { return x(d.class) + (x.bandwidth() / 2) - 11; })
+        .attr("y", function(d) { return y(d.probabilities) - 5;})
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .attr("fill", "black")
+        .text(function(d) {
+            return d.probabilities;
+        });
 
+    text.exit().remove();
 
 
 
