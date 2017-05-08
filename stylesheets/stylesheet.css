@@ -325,7 +325,7 @@ form {
 }
 #category-select {
   padding: 10px;
-  margin-top: 130px;
+  margin-top: 90px;
 }
 
 iframe {
@@ -749,8 +749,10 @@ svg {
 
 .play {
     display:block;
-    height:210px;
+    height:275px;
     overflow:auto;
+    border: 1px solid black;
+
 }
 
 tr {

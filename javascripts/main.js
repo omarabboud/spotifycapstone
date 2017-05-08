@@ -1,3 +1,15 @@
+
+queue()
+    .defer(d3.csv, "data/demo_playlists.csv")
+    .defer(d3.csv, "data/demo_probabilities.csv")
+    .await(ready);
+
+function ready(error, playlists, probabilities) {
+    if (error) throw error;
+    playlistTable = new Playlist(playlists);
+
+}
+
 console.log('This would be the main JS file.');
 
 var svg = d3.select("#force").append("svg"),
@@ -105,13 +117,43 @@ var svg2 = d3.select("#chart-area").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var selectedSong = "";
+var selectedBucket = "";
+
 $("#songselect tr").click(function(e) {
     $("#songselect tr").removeClass("highlight");
     $(this).addClass("highlight");
+    selectedSong=this.id;
+
+    if (selectedSong!="" & selectedBucket!=""){
+        playlistTable.wrangleData(selectedSong, selectedBucket);
+
+    }
 });
 
 
 $("#methodselect tr").click(function(e) {
     $("#methodselect tr").removeClass("highlight");
     $(this).addClass("highlight");
+    selectedBucket=this.id;
+    if (selectedSong!="" & selectedBucket!=""){
+        playlistTable.wrangleData(selectedSong, selectedBucket);
+
+    }
+
 });
+
+/*
+function printOutRides() {
+    var printOut = ""
+
+    attractions.forEach(function(ride) {
+            printOut += ride.name + ", $" + ride.price + "<br/>";
+        }
+    );
+    return printOut
+}
+
+
+document.getElementById("themePark2").innerHTML = printOutRides()
+*/
