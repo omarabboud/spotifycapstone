@@ -105,18 +105,6 @@ function dragended(d) {
 
 /* SVG STUFF FOR CLASS PROBABILITY CHART */
 
-var margin = {top: 10, right: 10, bottom: 100, left: 10};
-
-var width = 400 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-var svg2 = d3.select("#chart-area").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .attr("class","probsvg")
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 var selectedSong = "";
 var selectedBucket = "";
 
