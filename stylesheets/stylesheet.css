@@ -292,8 +292,11 @@ th {
 
 td {
   padding: 10px;
-  border: 1px solid #373737;
- }
+  border-bottom: 1px solid #373737;
+  border-left: 1px solid #373737;
+  border-right: 1px solid #373737;
+
+}
 
 .input-song {
   padding: 0px;
@@ -751,8 +754,15 @@ svg {
     display:block;
     height:275px;
     overflow:auto;
-    border: 1px solid black;
+    border: 1px dashed #373737;
 
+}
+
+.play-disabled {
+  display:block;
+  height:275px;
+  overflow:auto;
+  border: 0px dashed #373737;
 }
 
 tr {
@@ -775,4 +785,13 @@ thead, tbody tr {
 .highlight {
     background-color: #5A955A;
     color: #fff;
+}
+
+.playlist-col {
+  width:82%;
+
+
+}
+.popularity-col {
+  width: 18%;
 }
