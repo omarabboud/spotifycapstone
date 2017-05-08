@@ -778,9 +778,10 @@ thead, tbody tr {
 .bar { fill:  #5A955A; }
 
 .probsvg {
-  width: 600px;
-  height: 200px;
+  width: 560px;
+  height: 250px;
 }
+
 
 .highlight {
     background-color: #5A955A;
