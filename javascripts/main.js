@@ -110,6 +110,7 @@ $("#songselect tr").click(function(e) {
     $(this).addClass("highlight");
 });
 
+
 $("#methodselect tr").click(function(e) {
     $("#methodselect tr").removeClass("highlight");
     $(this).addClass("highlight");

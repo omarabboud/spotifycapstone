@@ -280,7 +280,6 @@ hr {
 table {
   /*border: 1px solid #373737;*/
   margin-bottom: 20px;
-  padding-bottom: 20px;
   text-align: left;
  }
 
@@ -296,14 +295,41 @@ td {
   border: 1px solid #373737;
  }
 
+.input-song {
+  padding: 0px;
+  height: 0px;
+}
+
 form {
   background: #f2f2f2;
   padding: 20px;
 }
 
+.first{
+  width: 45%;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  height: 0px;
 
+
+}
+.second {
+  padding-left: 10px;
+  height: 0px;
+
+
+}
+.third {
+  width: 81px;
+  height: 0px;
+}
 #category-select {
-  margin-top: 40px;
+  padding: 10px;
+  margin-top: 130px;
+}
+
+iframe {
+  margin-top: 10px;
 }
 /*******************************************************************************
 Full-Width Styles
@@ -728,7 +754,7 @@ svg {
 }
 
 tr {
-    padding: 5px 5px 5px 5px;
+    /*padding: 5px 5px 5px 5px;*/
 }
 
 thead, tbody tr {
