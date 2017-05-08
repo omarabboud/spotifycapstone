@@ -765,9 +765,11 @@ thead, tbody tr {
     table-layout:fixed;/* even columns width , fix width of table too*/
 }
 
+.bar { fill:  #5A955A; }
+
 .probsvg {
-    width: 400px;
-    height: 300px;
+  width: 600px;
+  height: 200px;
 }
 
 .highlight {
