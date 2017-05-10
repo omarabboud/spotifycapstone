@@ -33,7 +33,7 @@ Playlist.prototype.wrangleData = function(selectSong, selectBucket){
         // console.log([flow.Origin, flow.Dest]);
         if (d.seed_id==vis.selectedSong & d.bucket_name==vis.selectedBucket){
 
-            var outputFrame = '<tr><td class="playlist-col input-song"><iframe src="https://open.spotify.com/embed?uri=spotify:track:' + d.track_ids + '&theme=black&view=list" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe></td><td class="popularity-col">' + d.popularity + '</td></tr>'
+            var outputFrame = '<tr><td class="song playlist-col input-song"><iframe src="https://open.spotify.com/embed?uri=spotify:track:' + d.track_ids + '&theme=black&view=list" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe></td><td class="popularity-col">' + d.popularity + '</td></tr>'
             $( ".play" ).append(outputFrame);
             /*document.getElementById("playlist-gen").innerHTML = outputFrame;*/
 
