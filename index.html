@@ -229,7 +229,7 @@
                     These features are a characteristic of the frequency and pitch of the songs. Combining all the 34 features taken at 30 timestamps of a song make 1020
                     dimensional predictor for a song.
 
-                <img src="images/Energy_extraction.png" style="width: 65%"/>
+                <img src="images/energy_extracted@3x.png" style="width: 65%"/>
                 <p> Extraction of energy from track with frame rate = 1 second</p>
 
                 </p>
@@ -243,19 +243,19 @@
 
             <h3>Predicting track popularity</h3>
             <p>This section describes modelling techniques used to predict the popularity of a track given the raw-audio features.</p>
-            The predictors are the mean value of the individual raw-audio features extracted at 30 timestamps and the response is the track popularity
+                <p>The predictors are the mean value of the individual raw-audio features extracted at 30 timestamps and the response is the track popularity
                 (in range 0-100)  available from spotify api. Dimensionality reduction techniques like PCA did not give improvement in model performance
-                so, we decided to take the mean value of each feature.
+                so, we decided to take the mean value of each feature.</p>
                 <ol>
-                <li><strong>Regression Model </strong>Regression models like linear regression , GAMs(Generalized additive models) and Random Forest Regressors
+                <li><strong>Regression Model: </strong>Regression models like linear regression , GAMs(Generalized additive models) and Random Forest Regressors
                 were implemented and the best model was Random Forest Regression with R2 = 0.35. Since the regression models do not perform well, we changed the
                 problem to a classification problem by binning the response variable in 6 bins. The songs of low popularity (0-50) were put in bin 1, bin 2
-                contains songs of popularity 50-60 and so on.
-                    <li><strong>Classification Model </strong>
+                contains songs of popularity 50-60 and so on.</li>
+                    <li><strong>Classification Model: </strong>
                     Random Forest Classification Model turned out to be the best classifier out of different classifiers with cross-validation classification accuracy
                     of 76%. More importantly, the class of the most popular songs has F-score=1(precision =1, recall =1) ,i.e., the most popular class has zero
                     misclassification rate.  The dataset was skewed, with a lot more low popularity songs compared to high popularity songs. Class weights were used to tackle
-                    imbalanced dataset.
+                    imbalanced dataset.</li>
                 </ol>
             </div>
         </div>
