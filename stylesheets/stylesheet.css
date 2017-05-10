@@ -606,14 +606,18 @@ ol {
   margin-right:150px;
 }*/
 .tableauPlaceholder {
-  width: 85%;
-  margin-top: 0;
+  width: 100%;
   height: auto;
-  margin: 0 auto;
-  padding: 0;
+  margin-top: 0;
+  padding-top: 0;
   position: relative;
 
-}
+}/*
+.center-image{
+  display: block;
+  margin: auto;
+  width: 100%;
+}*/
 #conclusion img {
   display:block;
   margin:auto;
