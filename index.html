@@ -663,15 +663,21 @@
           <div class="col-md-6 column">
               <h3>Conclusions</h3>
 
-              <p>What this Capstone has concluded is that combinations of songs can be optimized for popularity using
-                  a simulated annealing method supported by raw audio-based similarity metrics and a Random Forest
-                  predictive model of popularity. Analyzing the intrinsic data of a song — especially its acoustical
-                  features — as well as its placement alongside other songs, can result in a reliable prediction of
-                  popularity on a scale of 1 to 5. This is a particularly important technical and strategic finding
-                  for Spotify; as the company grows, modelling techniques such as these have the potential to make
-                  their playlists and other product offerings more data-driven, rigorous, and scaleable.
+                <p>What this Capstone has concluded is that playlists can be optimized for popularity using
+                  acoustic and non-acoustic features extracted from component songs. Non-acoustic features included
+                  the song's popularity, its availability in world markets, and other metadata obtained from the record
+                  summary. Acoustic features included prescribed signals for energy, liveliness, tempo, and key, with
+                  additional features engineered and sampled by us. </p>
 
-              </p>
+
+               <p>
+                  Generating a playlist given an input song of interest was performed using simulated annealing,
+                   which optimized combinations and sequences of songs across a pool of candidate tracks. Our final
+                   module allows a user to specify the pool of candidate songs from a list of three options:
+                   a network of top tracks from related artists, a network of similar tracks from related
+                   artists, or a system of similar tracks that are 100% acoustically-derived from across the Spotify
+                   universe.
+               </p>
 
           </div>
             <div class="col-md-6 column">
@@ -688,7 +694,7 @@
         </div>
 
         <div class="section" id="appendixSA">
-            <h2>Appendix A: Simulated Annealing</h2>
+            <h2 class="sectiontitle">Appendix A: Simulated Annealing</h2>
             <div class="col-md-6 column">
 
                 <h3>Overview</h3>
