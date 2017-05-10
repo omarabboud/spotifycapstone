@@ -325,6 +325,7 @@ form {
 .third {
   width: 81px;
   height: 0px;
+  background-color: #373737;
 }
 #category-select {
   padding: 10px;
@@ -810,4 +811,17 @@ thead, tbody tr {
 
 .second {
   vertical-align: middle;
+}
+
+iframe {
+  margin: 0 0 0 0;
+}
+
+.song {
+  background-color: #282828;
+}
+
+
+.selection {
+  height: 72px;
 }
