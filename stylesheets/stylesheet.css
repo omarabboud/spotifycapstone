@@ -797,6 +797,17 @@ thead, tbody tr {
 
 
 }
+
 .popularity-col {
   width: 18%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.first {
+  vertical-align: middle;
+}
+
+.second {
+  vertical-align: middle;
 }
