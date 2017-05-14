@@ -746,7 +746,24 @@
                    artists, or a system of similar tracks that are 100% acoustically-derived from across the Spotify
                    universe.
                </p>
-
+               <p> Evaluation of recommender systems is always tricky. In addition to that,
+               there is no definite metric to measure acoustic similarity. It is usually approached in a subjective way where
+                music experts rate the similarity of songs and finally the majority vote is taken to come up with 
+                similarity scores between songs. Based on literature review, we find that the acoustically similar songs 
+                belong to the same genre more that 90% of the time. To evaluate our model for acoustic similarity, we listened
+                to the songs,  and compared the genres of acoustically similar songs for a couple of seed songs and observe that
+                they are of the same genre. </p>
+                <p> Additionally, its difficult to evaluate out playlist generation engine because of two reasons.
+                1. We have a limited dataset of ~1600 playlists and only 25% of the songs present in playlists have raw-audio
+                available. 
+                2. We are trying to generate a playlist which takes into account the acoustic similarity of songs 
+                and try to add songs from lesser known artists, which comes from 25% of the total data.
+                The method we used to evaluate the playlist generation engine is prediction accuracy of our playlist popularity
+                prediction model  which performs well on  the dataset we have.
+                
+                </p>
+                
+                
           </div>
             <div class="col-md-6 column">
                 <h3>Future Work</h3>
