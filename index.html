@@ -276,23 +276,29 @@
                 <div class="col-md-6 column">
                     
                     <h3>Earth Movers Distance</h3>
-                    
-                     <strong>Obtaining the spectral signature</strong>
+                    The EMD calculates the minimum amount of ‘work’(probability mass) required to transform one spectral signature
+                    into the other.
+                    <p></p>
+                     <p><strong>Obtaining the spectral signature</strong></p>
                     
                     <p>The spectral signature attempts to capture the main statistics of the freqeuncy and chroma coefficients
                     to characterize the main types of sounds present in a track. We achieve this by dividing each song into 
                     30 frames each of 1 second.
-                    <ol><li>For each frame, we obtain a spectral representation which consists of 13 MFCCs,
+                    <ol><li>For each frame, we extract 34 acoustic features which consists of 13 MFCCs,
                     12 Chroma coefficents in addition to other spectral and energy features.
                     <li>Once we have these frames, we use Gaussian Mixture Models based clustering to cluster them into 4 clusters for each song. 
                     <p>It is important to note that the clustering is local to each song.
                     The clusters are characterized by means, covariances and weights( weight is proportional to the no. of frames
-                    present in each cluster). The set of clusters define the signature of a song. </p>
+                    present in each cluster). The set of clusters define the signature of a song. Mathematically, 
+                    $\{(&#956_{p_1}, &#931_{p_1}, w_{p_1}),.....(&#956_{p_m}, &#931_{p_m}, w_{p_m})\}$ is the signature of a song
+                    where $&#956_{p_1}$ and $&#931_{p_1}$ are the mean and covariance respectively of the cluster $p_i$ and $w_i$ is the weight of that cluster.
+                    </p>
                     </p>
                     </ol>
-                    Process to obtain signature of song
+                    <center>Process to obtain signature of song</center>
                     <p>
-                    <img src="images/signature.png" style="width: 40%"/>
+                    <center><img src="images/signature2.png" style="width: 50%"/></center>
+                    
                     </p>
                     
 
@@ -303,7 +309,6 @@
                     <h3></h3>
                     <strong>Finding song similarity </strong>
                     <p>Once we have the spectral signature of two songs, we use EMD to calculate the similarity between songs.
-                    EMD is defined as the amount of probability mass required to move from one signature to another.
                     We use symmetric form of KL divergence to calculate the distance between two clusters. Linear programming
                     is used to minimize the cost (defined by multiplying flow with KL divergence distance). Finally EMD is calculated
                     as weighted sum of distances between clusters where weights are flow(probability mass). The lower the EMD value,
@@ -317,14 +322,20 @@
                     chosen as vantange points. Given an input track, we find the closest vantange point and then return top 200  acoustically
                     similar songs from that cluster (where acoustic similarity is calculated using EMD).
                     This reduces the computation of EMD to a subset of songs.</p>
+                    
+                    <p>
+                    <center><img src="images/vantagepoint.png" style="width: 100%"/></center>
+                    
+                    </p>
                 <h3>Manhattan Distance</h3>
                 Calculating EMD between two songs a computationally expensive. In addition to that, raw-audio is required to 
                 get the spectral signature. To deal with computational complexity, we used Manhattan distance to calculate song similarity.
                 Instead of using raw-audio features, we used acoustic features provided by spotify api as a feature set for the song.
                 We used this distance metric to get a list fo acoustically similar songs  from related artists.
                 
-
+            
                 </div>
+                
             <!--</div>-->
         </div>
 
