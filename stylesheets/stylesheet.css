@@ -825,3 +825,48 @@ iframe {
 .selection {
   height: 72px;
 }
+
+#overview{
+  height:530px;
+  padding: 0 50px 0 50px;
+}
+
+#audio-analysis{
+  height: 480px;
+  padding: 0 50px 0 50px;
+
+}
+
+#conclusion{
+  height: 480px;
+  padding: 0 50px 0 50px;
+}
+
+#references{
+  height:300px;
+  padding: 0 50px 0 50px;
+}
+
+footer {
+  background-color:#4c4c4c;
+  height: 100px;
+}
+
+#end {
+
+  background-color: #4a9e48;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 20px;
+  margin: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+
+}
+
+#appendixSA{
+
+  height: 800px;
+  padding: 150px 50px 100px 50px;
+
+}
