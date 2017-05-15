@@ -157,7 +157,7 @@
         <div class="section tableauarea" id="datasets1">
             <h2 class="sectiontitle" id="sectiontitletableau">Data Exploration and Visualization</h2>
             <center><p class = 'collabbox'>This carousel cycles through primary observations learned through the data exploration phase of the
-            project; namely, understanding the relationship between the mean popularity of a playlist's tracks and the overall popularity
+            project, such as understanding the relationship between the mean popularity of a playlist's tracks and the overall popularity
                 of a playlist.</p></center>
             <div class="slide" id="slide1">
                 <center><div class='tableauPlaceholder' id='viz1493651712397' style='position: relative'><noscript><a href='#'><img class="center-image" alt='Spotify has 1726 playlists, but only a few with millions of followers. ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sp&#47;spotify_api_data_exploration&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='spotify_api_data_exploration&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sp&#47;spotify_api_data_exploration&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1493651712397');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1104px';vizElement.style.height='669px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></center>
@@ -208,7 +208,7 @@
                       In order to generate a training set of playlist-level features, a careful consideration of track-level
                       analysis had to be made in order to aggregate song data in a meaningful way. While simple averaging or
                       addition could have been a simple solution, capturing the distribution of acoustic features more
-                      precisely hypothetically contains better predictive ability. As a result, our approach was to first
+                      precisely should contain better predictive ability. As a result, our approach was to first
                       approximate the distribution of acoustic features by representing each acoustic features in 5 different
                       columns, each corresponding to the quantile of that feature's distribution across the playlist. The
                       second, and chosen, approach was to instead reflect the distribution through sequencing, by providing
@@ -234,7 +234,7 @@
                   was classified with almost perfect accuracy, results on an out-of-bag testing sample were roughly
                   50%, indicating a rare case of overfitting within the random forest. </p>
 
-                  <center><img style="width: 40%; display: block" src="images/random_forest.png"/></center>
+                  <img style="width: 80%; display: block" src="images/tuning_rf@3x.png"/>
 
                   <p></p>
               </div>
